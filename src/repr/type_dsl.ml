@@ -126,6 +126,13 @@ module Top_universal = struct
     in
     { eval }
 
+  let mu : 'a. ('a t -> 'a t) -> 'a t =
+   fun f ->
+    let eval (type r) (module R : Top with type br = r) =
+      R.inj @@ R.mu (fun x -> f.eval (module R) x)
+    in
+    { eval }
+
   type 'br generic = { generic : 'a. 'a t -> ('a, 'br) app } [@@unboxed]
 
   let make : type br. (module Top with type br = br) -> br generic =

@@ -39,7 +39,7 @@ module type Recursive = sig
   val mu : ('a t -> 'a t) -> 'a t
   (** [mu f] is the representation [r] such that [r = mu r]. *)
 
-  val mu2 : ('a t -> 'b t -> 'a t * 'b t) -> 'a t * 'b t
+  (* val mu2 : ('a t -> 'b t -> 'a t * 'b t) -> 'a t * 'b t *)
   (** [mu2 f] is the representations [r] and [s] such that [r, s = mu2 r s]. *)
 end
 
@@ -100,10 +100,9 @@ end
 module type Top = sig
   include Bottom
   include Basic with type 'a t := 'a t
+  include Recursive with type 'a t := 'a t
 
-  (* include Recursive with type 'a t := 'a t *)
-
-  include Variant with type 'a t := 'a t
+  (* include Variant with type 'a t := 'a t *)
   include Record with type 'a t := 'a t
 
   (* include Fixed_size with type 'a t := 'a t *)
