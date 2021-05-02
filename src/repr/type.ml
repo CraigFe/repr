@@ -501,3 +501,9 @@ struct
   let t : type v. v t -> v Map.t t =
    fun v -> map (seq (pair Map.key_t v)) Map.of_seq Map.to_seq
 end
+
+module Unstable = struct
+  module Core = Type_core
+
+  let observe : type a. (a t, a Core.t) Witness.eq = Refl
+end

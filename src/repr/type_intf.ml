@@ -683,4 +683,10 @@ module type Type = sig
   (** @inline *)
 
   module type DSL = DSL
+
+  module Unstable : sig
+    module Core = Type_core
+
+    val observe : ('a t, 'a Core.t) Witness.eq
+  end
 end
