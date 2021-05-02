@@ -8,7 +8,7 @@ license: "ISC"
 homepage: "https://github.com/mirage/repr"
 bug-reports: "https://github.com/mirage/repr/issues"
 depends: [
-  "dune" {>= "2.7"}
+  "dune" {>= "2.8"}
   "repr" {= version}
   "ppx_repr" {= version}
   "bechamel"

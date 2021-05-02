@@ -1,0 +1,7 @@
+(library
+ (name repr_ppxlib_tests)
+ (package repr-ppxlib)
+ (inline_tests)
+ (preprocess (pps ppx_repr ppx_expect))
+ (libraries repr-ppxlib ppxlib fmt))
+

@@ -1,6 +1,5 @@
-(lang dune 2.7)
+(lang dune 2.8)
 (generate_opam_files true)
-(allow_approximate_merlin)
 
 (name repr)
 (source (github mirage/repr))
@@ -61,3 +60,9 @@ guarantee.
   (ppxlib (and (>= 0.12.0))))
  (synopsis "Fuzz tests for the `repr` package")
  (description "Fuzz tests for the `repr` package"))
+
+(package
+ (name repr-ppxlib)
+ (depends
+  (repr (= :version))
+  ppxlib))
