@@ -29,6 +29,12 @@ guarantee.
 "))
 
 (package
+ (name repr-graphql)
+ (depends
+  (repr (= :version))
+  graphql))
+
+(package
  (name ppx_repr)
  (depends
   (repr (= :version))

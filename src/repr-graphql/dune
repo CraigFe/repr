@@ -1,0 +1,4 @@
+(library
+ (name repr_graphql)
+ (public_name repr-graphql)
+ (libraries repr graphql))
